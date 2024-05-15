@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0e0e0e;
+}
+
+.container {
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #222;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #00ff00;
+  text-align: center;
+}
+
+.container .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-container label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #00ff00;
+  margin-bottom: 8px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #00ff00;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #333;
+  color: #00ff00;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #00ff00;
+}
+
+.input-container i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-container i.fa-user {
+  color: #00ff00;
+}
+
+.input-container i.fa-envelope {
+  color: #ffa000;
+}
+
+.input-container i.fa-lock {
+  color: #f44336;
+}
+
+.input-container span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  transition: 0.3s;
+}
+
+.input-container input:focus + span,
+.input-container input:not(:placeholder-shown) + span {
+  transform: translateY(-100%) scale(0.8);
+  color: #00ff00;
+}
+
+.input-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00ff00;
+  color: #222;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-container input[type="submit"]:hover {
+  background-color: #008000;
+}
+
+.container p {
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  color: #888;
+}
+
+.container p a {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container p a:hover {
+  text-decoration: underline;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  border-radius: 50%;
+  border: 4px solid #00ff00;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
